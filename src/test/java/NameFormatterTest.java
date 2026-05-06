@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class NameFormatterTest {
 
     @Test
-    public void testFormatNameBeforeFormatted_firstLastIsCorrect() {
+    public void testFormatName_firstLastIsCorrect() {
         //arrange
-        String expectedName = "Andy Tang";
+        String expectedName = "Tang, Andy";
 
         //act
         String testFormatter = NameFormatter.format("Andy", "Tang");
@@ -17,8 +17,8 @@ class NameFormatterTest {
     }
 
     @Test
-    public void testFormatNameBeforeFormatted_noPrefix_includesFirstMiddleLastAndSuffix() {
-        String expectedName = "Mel B Johnson, PhD";
+    public void testFormatName_noPrefix_includesFirstMiddleLastAndSuffix() {
+        String expectedName = "Johnson, Mel B, PhD";
 
         String testFormatter = NameFormatter.format("", "Mel", "B", "Johnson", "PhD");
 
@@ -26,8 +26,8 @@ class NameFormatterTest {
     }
 
     @Test
-    public void testFormatNameBeforeFormatted_includesAllPrefixFirstMiddleLastSuffix(){
-        String expectedName = "Dr. Mel B Johnson, PhD";
+    public void testFormatName_includesAllPrefixFirstMiddleLastSuffix(){
+        String expectedName = "Johnson, Dr. Mel B, PhD";
 
         String testFormatter = NameFormatter.format("Dr", "Mel", "B", "Johnson", "PhD");
 
